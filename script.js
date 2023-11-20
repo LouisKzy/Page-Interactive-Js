@@ -56,6 +56,7 @@ var navbarSelected = document.getElementsByClassName("collapse")[0];
 function bootstrapAlternate() {
   if (linkSelectorBootstrap.disabled === true) {
     linkSelectorBootstrap.disabled = false;
+
   } else if (linkSelectorBootstrap.disabled === false) {
     linkSelectorBootstrap.disabled = true;
   }
@@ -78,7 +79,7 @@ cardList.forEach(function(card) {
 
   selectFirstViewButton.addEventListener("mouseover", function() {
     selectCardParagraph.classList.toggle("collapse")
-    console.log()
+
     if (selectCardParagraph.classList.contains("collapse")) {
     
     selectImg.style.width = "20%";
@@ -108,7 +109,19 @@ function wtfButton() {
 };
 wtfButton();
 
+// ---------------------- N°8 Button WTF Reload ==> ----------------------
+var selectButtonArrowLeft = document.getElementsByClassName("btn-primary")[0];
+// console.log(selectButtonArrowLeft);
 
+console.log(selectButtonArrowLeft.href)
+function wtfButtonReload() {
+  selectButtonArrowLeft.href = "#";
+  selectButtonArrowLeft.addEventListener("click", function() {
+    var getCards = document.getElementsByClassName("card");
+    var getParent = getCards[0].parentNode.parentNode;
+    getParent.insertBefore(getParent.firstElementChild, getParent.lastElementChild);
+  })
+}
 
-
+wtfButtonReload();
 
